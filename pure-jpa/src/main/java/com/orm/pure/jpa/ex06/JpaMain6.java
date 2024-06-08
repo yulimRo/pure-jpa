@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 
 import com.orm.pure.jpa.ex06.domain.Member6_0;
 import com.orm.pure.jpa.ex06.domain.MemberProduct;
+import com.orm.pure.jpa.ex06.domain.MemberProduct1_2;
 import com.orm.pure.jpa.ex06.domain.MemberProduct2;
 import com.orm.pure.jpa.ex06.domain.MemberProductId2;
 import com.orm.pure.jpa.ex06.domain.Member_6;
@@ -22,7 +23,6 @@ import com.orm.pure.jpa.ex06.domain.Member_6_3_2;
 import com.orm.pure.jpa.ex06.domain.Member_6_4;
 import com.orm.pure.jpa.ex06.domain.Member_6_5;
 import com.orm.pure.jpa.ex06.domain.Member_6_6;
-import com.orm.pure.jpa.ex06.domain.Member_6_7;
 import com.orm.pure.jpa.ex06.domain.Member_6_8;
 import com.orm.pure.jpa.ex06.domain.oneway.Locker;
 import com.orm.pure.jpa.ex06.domain.oneway.Locker_2;
@@ -68,7 +68,10 @@ public class JpaMain6 {
 			//ManyToManyTwoWay(emf);
 			
 			//다대다 연결엔티티 사용 (@IdClass)
-			ManyToManyWithConnectEntity(emf);
+			//ManyToManyWithConnectEntity(emf);
+			
+			//다대다 연결엔티티 사용 (비식별)
+			ManyToManyWithConnectEntity1_2(emf);
 
 			
 			//다대다 연결엔티티 사용 (@EmbeddedId)
@@ -433,6 +436,44 @@ public class JpaMain6 {
 		
 	}
 	
+	public static void ManyToManyWithConnectEntity1_2(EntityManagerFactory emf) {
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction tx = em.getTransaction();
+		try {
+			
+			tx.begin();
+			
+			Member_6_6 member = new Member_6_6();
+			member.setUsername("노유림");
+			em.persist(member);
+			
+			Product6_6 product1 = new Product6_6();
+			product1.setName("상품1");
+			
+			Product6_6 product2 = new Product6_6();
+			product2.setName("상품2");
+			
+			em.persist(product1);
+			em.persist(product2);
+			
+			MemberProduct1_2 memProd = new MemberProduct1_2();
+			
+			memProd.setMember(member);
+			memProd.setProduct(product2);
+			memProd.setOrderAmount(100);
+			em.persist(memProd);
+			
+			tx.commit();
+			
+		} catch(Exception ex) {
+			logger.error(ex.getMessage(), ex);
+			tx.rollback();
+		} finally {
+			em.close();
+		}
+		
+	}
+	
 	public static void ManyToManyWithConnectEntity2(EntityManagerFactory emf) {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction tx = em.getTransaction();
@@ -453,13 +494,15 @@ public class JpaMain6 {
 			em.persist(product1);
 			em.persist(product2);
 			
-			MemberProductId2 memProdId = new MemberProductId2();
-			memProdId.setMember(member);
-			memProdId.setProduct(product2);
-			//em.persist(memProdId);
 			
 			MemberProduct2 memProd = new MemberProduct2();
-			memProd.setId(memProdId); //MemberProductId2 식별자 클래스 자체 주입
+			MemberProductId2 mpId = new MemberProductId2();
+			mpId.setMemberId(member.getId());
+			mpId.setProductId(product1.getId());
+			
+			memProd.setOrderId(mpId);
+			memProd.setMember(member);
+			memProd.setProduct(product2);
 			memProd.setOrderAmount(100);
 			
 			em.persist(memProd);

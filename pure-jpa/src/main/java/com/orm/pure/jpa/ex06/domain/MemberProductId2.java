@@ -3,11 +3,8 @@ package com.orm.pure.jpa.ex06.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-
-import com.orm.pure.jpa.ex06.domain.oneway.Product6_6;
 
 import lombok.NoArgsConstructor;
 
@@ -18,18 +15,31 @@ import lombok.NoArgsConstructor;
 @Embeddable
 public class MemberProductId2 implements Serializable {
 
-	@ManyToOne
-	@JoinColumn(name="member_id")
-	private Member_6_8 member;
-	
+	@Column(name = "member_id")
+	private Long memberId;
 
-	@ManyToOne
-	@JoinColumn(name="product_id")
-	private Product6_6 product;
+	@Column(name = "product_id")
+	private Long productId;
+
+	public Long getMemberId() {
+		return memberId;
+	}
+
+	public void setMemberId(Long memberId) {
+		this.memberId = memberId;
+	}
+
+	public Long getProductId() {
+		return productId;
+	}
+
+	public void setProductId(Long productId) {
+		this.productId = productId;
+	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(member, product);
+		return Objects.hash(memberId, productId);
 	}
 
 	@Override
@@ -41,23 +51,7 @@ public class MemberProductId2 implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		MemberProductId2 other = (MemberProductId2) obj;
-		return Objects.equals(member, other.member) && Objects.equals(product, other.product);
-	}
-
-	public Member_6_8 getMember() {
-		return member;
-	}
-
-	public void setMember(Member_6_8 member) {
-		this.member = member;
-	}
-
-	public Product6_6 getProduct() {
-		return product;
-	}
-
-	public void setProduct(Product6_6 product) {
-		this.product = product;
+		return Objects.equals(memberId, other.memberId) && Objects.equals(productId, other.productId);
 	}
 
 }

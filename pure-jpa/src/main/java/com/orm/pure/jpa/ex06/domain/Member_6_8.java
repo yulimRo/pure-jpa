@@ -26,7 +26,7 @@ public class Member_6_8 {
 	private String username;
 	
 	//연결엔티티
-	@OneToMany(mappedBy = "id.member")
+	@OneToMany(mappedBy = "member")
 	private List<MemberProduct2> memberProduct;
 
 	@Column(name = "age")

@@ -11,7 +11,7 @@ import javax.persistence.PrimaryKeyJoinColumn;
 @Entity
 @DiscriminatorValue("A") //구분타입값, INSERT 할때 DTYPE 칼럼에 해당 값 넣어줌
 @PrimaryKeyJoinColumn(name="album_id") //ID 재정의
-public class Album extends Item{
+public class Album extends Item {
 	private String artist;
 
 	public String getArtist() {
