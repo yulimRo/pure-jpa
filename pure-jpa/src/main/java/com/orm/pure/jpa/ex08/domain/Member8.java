@@ -15,15 +15,16 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
-@Entity
-@NamedQuery(name="Member8.findByName", query="select m from Member8 m where m.name=:username")
-@SequenceGenerator(
-		name= "MEM_SEQ_GE",
-		sequenceName = "MEM_SEQ")
+@Entity(name="Member8")
+//@NamedQuery(name="Member8.findByName", query="select m from Member8 m where name=:username")
+//@SequenceGenerator(
+//		name= "MEM_SEQ_GE",
+//		sequenceName = "MEM_SEQ")
 public class Member8 {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "MEM_SEQ_GE")
+	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "MEM_SEQ_GE")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "member_id")
 	private Long id;
 

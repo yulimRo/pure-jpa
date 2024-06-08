@@ -8,13 +8,14 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-@SequenceGenerator(
-		name= "PRD_SEQ_GE",
-		sequenceName = "PRD_SEQ")
+//@SequenceGenerator(
+//		name= "PRD_SEQ_GE",
+//		sequenceName = "PRD_SEQ")
 public class Product8 {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PRD_SEQ_GE")
+	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PRD_SEQ_GE")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "product_id")
 	private Long id;
 	private String name;

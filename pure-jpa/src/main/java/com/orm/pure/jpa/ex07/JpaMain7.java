@@ -76,14 +76,14 @@ public class JpaMain7 {
 			tx.begin();
 			
 			//회원저장
-			for(int i =0; i <4; i++) {
+			for(int i =1; i <4; i++) {
 				Member7 member7 = new Member7();
 				member7.setName("홍길동"+i);
 				em.persist(member7);
 			}
 			
 			//팀저장
-			for(int i =0; i <3; i++) {
+			for(int i =1; i <3; i++) {
 				Team7 team7 = new Team7();
 				team7.setName("팀"+i);
 				em.persist(team7);
@@ -114,13 +114,13 @@ public class JpaMain7 {
 			Product7 findProduct1 = em.find(Product7.class, 8L);
 			Product7 findProduct2 = em.find(Product7.class, 9L);
 			Product7 findProduct3 = em.find(Product7.class, 10L);
-			
+
 			Order7 order = new Order7();
 			order.setMember(findMem1);
 			order.setProduct(findProduct1);
 			//findMem1.getOrders().add(order);
-			
-			
+
+
 			Order7 order2 = new Order7();
 			order2.setMember(findMem2);
 			order2.setProduct(findProduct2);
@@ -134,8 +134,8 @@ public class JpaMain7 {
 			em.persist(order);
 			em.persist(order2);
 			em.persist(order3);
-			
-			
+
+
 			logger.debug("==== 주문 엔티티 조회 ");
 			List<Order7> orders = findMem1.getOrders(); //PersisBag 컬렉션 래퍼
 			

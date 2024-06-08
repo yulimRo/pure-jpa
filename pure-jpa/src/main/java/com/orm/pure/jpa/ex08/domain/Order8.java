@@ -14,13 +14,14 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
 @Entity
-@SequenceGenerator(
-		name= "ORD_SEQ_GE",
-		sequenceName = "ORD_SEQ")
+//@SequenceGenerator(
+//		name= "ORD_SEQ_GE",
+//		sequenceName = "ORD_SEQ")
 public class Order8 {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ORD_SEQ_GE")
+	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ORD_SEQ_GE")
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "order_id")
 	private Long id;
 
