@@ -19,7 +19,7 @@ public class Team8 {
 
 	@Id
 	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "TEM_SEQ_GE")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "team_id")
 	private Long id;
 

@@ -18,7 +18,7 @@ import com.orm.pure.jpa.ex06.domain.oneway.Product;
 /**
  * Prodcut 와 N:N 단방향
  */
-@Entity
+//@Entity
 @Table(name = "MEMBER_6_4")
 public class Member_6_4 {
 

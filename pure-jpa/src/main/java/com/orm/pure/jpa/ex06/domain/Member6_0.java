@@ -11,7 +11,7 @@ import javax.persistence.Table;
 /**
  * Team 객체와의 1:N 단방향 매핑
  */
-@Entity
+//@Entity
 @Table(name = "MEMBER_6_0")
 public class Member6_0 {
 

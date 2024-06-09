@@ -9,7 +9,7 @@ import javax.persistence.Id;
 /*
  * Member 엔티티와 N:N 단방향 매핑
  */
-@Entity
+//@Entity
 public class Product {
 	
 

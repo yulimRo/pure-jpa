@@ -11,7 +11,7 @@ import javax.persistence.Table;
  * Meber 엔티티와 1:1 매핑 단방향 (대상테이블)
  * 
  */
-@Entity
+//@Entity
 @Table(name = "LOCKER")
 public class Locker {
 

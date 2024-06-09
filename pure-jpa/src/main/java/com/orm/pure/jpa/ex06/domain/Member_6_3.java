@@ -14,7 +14,7 @@ import com.orm.pure.jpa.ex06.domain.oneway.Locker;
 /**
  *  Locker 와 1:1 단방향 매핑 객체  (주테이블 - 외래키 관리)
  */
-@Entity
+//@Entity
 @Table(name = "MEMBER_6_3")
 public class Member_6_3 {
 

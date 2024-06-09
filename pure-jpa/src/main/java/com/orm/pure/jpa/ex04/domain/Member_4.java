@@ -14,7 +14,7 @@ import javax.persistence.TemporalType;
 /**
  * 기본 회원 엔티티 (MEMBER 테이블과 매핑)
  */
-@Entity
+//@Entity
 @Table(name = "MEMBER_4")
 public class Member_4 {
 

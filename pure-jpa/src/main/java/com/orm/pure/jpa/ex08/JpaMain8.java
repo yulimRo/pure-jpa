@@ -1,24 +1,16 @@
 package com.orm.pure.jpa.ex08;
 
 
-import com.mysema.query.jpa.impl.JPAQuery;
-import com.orm.pure.jpa.ex07.domain.Album;
-import com.orm.pure.jpa.ex08.domain.*;
 import com.orm.pure.jpa.ex08.domain.func.DefaultFunc;
-import com.orm.pure.jpa.ex08.domain.func.JPQLFunc;
-import com.orm.pure.jpa.ex08.domain.func.QueryDSLFunc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.persistence.*;
-import javax.persistence.criteria.JoinType;
-import javax.persistence.criteria.*;
-import java.util.List;
 
-import static com.orm.pure.jpa.ex07.JpaMain7.saveData;
 //import static com.orm.pure.jpa.ex08.domain.QTeam8.team8; //기본 인스턴스 사용방식 2
 import static com.orm.pure.jpa.ex08.domain.func.CriteriaFunc.testCriteria;
-import static com.orm.pure.jpa.ex08.domain.func.QueryDSLFunc.groupHavingExample;
+import static com.orm.pure.jpa.ex08.domain.func.JPQLFunc.*;
+
 
 public class JpaMain8 {
 
@@ -29,9 +21,25 @@ public class JpaMain8 {
 		try {
 
 
-			//saveData(emf);
-			//testJQPL(emf);
-			//testCriteria(emf);
+			//DefaultFunc.saveData(emf);
+
+			//basicSelectMember(emf);
+
+			//selectStatisticsData(emf);
+
+			//selectMemberDTO(emf);
+
+			//selectJoinEntity(emf);
+
+			//pathExpression(emf);
+
+			//selectSubQuery(emf);
+
+			//selectConditionExpression(emf);
+
+			//selectNamedQuery(emf);
+
+			testCriteria(emf);
 			//QueryDSLFunc.exampleQueryDSL(emf);
 
 			//단건조회
@@ -41,10 +49,10 @@ public class JpaMain8 {
 			//QueryDSLFunc.singleQueryDSL(emf);
 
 			//정령 페이징
-			QueryDSLFunc.orderAndPagingExample(emf);
+			//QueryDSLFunc.orderAndPagingExample(emf);
 
 			//group-having
-			groupHavingExample(emf);
+			//groupHavingExample(emf);
 
 		} finally {
 			emf.close();

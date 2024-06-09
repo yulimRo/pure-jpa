@@ -16,7 +16,7 @@ import com.orm.pure.jpa.ex06.domain.Member_6_5;
 /*
  * Member 엔티티와 N:N 양방향 매핑
  */
-@Entity
+//@Entity
 @Table(name="PRODUCT_6_2")
 public class Product6_2 {
 

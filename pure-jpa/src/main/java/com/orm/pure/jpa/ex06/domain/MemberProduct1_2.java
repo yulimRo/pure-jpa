@@ -14,7 +14,7 @@ import com.orm.pure.jpa.ex06.domain.oneway.Product6_6;
 /**
  * Mem - Product 연결 엔티티 (회원/상품과 비식별관계)
  */
-@Entity
+//@Entity
 @Table(name="MEM_PRD")
 public class MemberProduct1_2 {
 	

@@ -17,7 +17,7 @@ import com.orm.pure.jpa.ex06.domain.Member_6_2;
  * Meber 엔티티의 다대일 양방향
  * 
  */
-@Entity
+//@Entity
 @Table(name = "TEAM_6_2")
 public class Team_6_2 {
 

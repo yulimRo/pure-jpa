@@ -19,7 +19,7 @@ import com.orm.pure.jpa.ex06.domain.Member6_0_1;
  * Meber 엔티티와의 1:N 양방향 매핑
  * 
  */
-@Entity
+//@Entity
 @Table(name = "TEAM_6_0_1")
 public class Team_6_0_1 {
 

@@ -17,7 +17,7 @@ import javax.persistence.TemporalType;
  * IDENTITY 기본키 매핑 전략 - ORACLE 사용 몬함
  * 회원 엔티티 (MEMBER 테이블과 매핑)
  */
-@Entity
+//@Entity
 @Table(name = "MEMBER_4_IDENTITY")
 public class Member_4_IDENTITY {
 

@@ -18,7 +18,7 @@ import javax.persistence.TemporalType;
  * TABLE 기본키 매핑 전략 
  * 회원 엔티티 (MEMBER 테이블과 매핑)
  */
-//@Entity
+////@Entity
 //@Table(name = "MEMBER_4_TABLE")
 @TableGenerator(name = "MEM_ID_TABLE_GEN", pkColumnValue = "MEM",
 table = "MY_SEQUENCE", pkColumnName = "seq_name", valueColumnName = "seq_value", initialValue = 1)

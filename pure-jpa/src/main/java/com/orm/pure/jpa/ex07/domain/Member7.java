@@ -1,19 +1,13 @@
 package com.orm.pure.jpa.ex07.domain;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
-@Entity
+//@Entity
 public class Member7 {
 
 	@Id
@@ -23,12 +17,26 @@ public class Member7 {
 
 	private String name;
 
+	//값 타입을 하나 이상 저장하려면 컬렉션에 보관
+	//기본값타입
+	@ElementCollection
+	@CollectionTable(name="FAVORITE_FOODS",joinColumns = @JoinColumn(name = "member_id"))
+	@Column(name="FOOD_NAME") //값으로 사용되는 칼럼이 하나면 @Column 으로 매핑
+	private Set<String> favoriteFoods = new HashSet<String>();
+
+	//임베디드타입
+	@ElementCollection
+	@CollectionTable(name="ADDRESS", joinColumns = {@JoinColumn(name="member_id")})
+	private List<Address> addressHistory = new ArrayList<>();
+
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="team_id")
 	private Team7 team;
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "member")
 	private List<Order7> orders = new ArrayList<>();
+
+
 
 	public Long getId() {
 		return id;
@@ -62,4 +70,19 @@ public class Member7 {
 		this.orders = orders;
 	}
 
+	public Set<String> getFavoriteFoods() {
+		return favoriteFoods;
+	}
+
+	public void setFavoriteFoods(Set<String> favoriteFoods) {
+		this.favoriteFoods = favoriteFoods;
+	}
+
+	public List<Address> getAddressHistory() {
+		return addressHistory;
+	}
+
+	public void setAddressHistory(List<Address> addressHistory) {
+		this.addressHistory = addressHistory;
+	}
 }

@@ -15,8 +15,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 
-@Entity(name="Member8")
-//@NamedQuery(name="Member8.findByName", query="select m from Member8 m where name=:username")
+@Entity
+@NamedQuery(name="Member8.findByName", query="select m from Member8 m where m.name = :username")
 //@SequenceGenerator(
 //		name= "MEM_SEQ_GE",
 //		sequenceName = "MEM_SEQ")
@@ -24,10 +24,11 @@ public class Member8 {
 
 	@Id
 	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "MEM_SEQ_GE")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "member_id")
 	private Long id;
 
+	@Column
 	private String name;
 
 	@ManyToOne(fetch = FetchType.EAGER)

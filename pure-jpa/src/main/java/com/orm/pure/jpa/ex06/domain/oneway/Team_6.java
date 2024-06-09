@@ -10,7 +10,7 @@ import javax.persistence.Table;
 /**
  * Memer 엔티티 N:1 관계의 단방향
  */
-@Entity
+//@Entity
 @Table(name="TEAM_6")
 public class Team_6 {
 

@@ -8,7 +8,7 @@ import javax.persistence.Table;
 /**
  * 기본 회원 엔티티 (MEMBER 테이블과 매핑)
  */
-@Entity
+//@Entity
 @Table(name="MEMBER")
 public class Member {
 

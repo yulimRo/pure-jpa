@@ -15,7 +15,7 @@ import com.orm.pure.jpa.ex06.domain.Member_6_3_2;
  * Meber 엔티티와 1:1 매핑 양방향 (대상테이블 -외래키)
  * 
  */
-@Entity
+//@Entity
 @Table(name = "LOCKER_3")
 public class Locker_3 {
 

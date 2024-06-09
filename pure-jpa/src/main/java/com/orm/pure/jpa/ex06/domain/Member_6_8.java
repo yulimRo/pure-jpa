@@ -13,7 +13,7 @@ import javax.persistence.Table;
 /**
  *  Product 엔티티 다대다 매핑(연결 엔티 사용)
  */
-@Entity
+//@Entity
 @Table(name = "MEMBER_6_8")
 public class Member_6_8 {
 

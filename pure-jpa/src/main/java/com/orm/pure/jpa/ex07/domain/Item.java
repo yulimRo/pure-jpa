@@ -14,7 +14,7 @@ import javax.persistence.InheritanceType;
  * 상속관계의 상위객체
  */
 
-@Entity
+//@Entity
 @Inheritance(strategy = InheritanceType.JOINED) //상속매핑전략
 @DiscriminatorColumn(name="DTYPE") //구분타입칼럼명
 @AttributeOverride(name="createDate", column = @Column(name="regDate")) //상속정보 변경

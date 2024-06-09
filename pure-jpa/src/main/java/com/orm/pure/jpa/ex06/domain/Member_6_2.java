@@ -16,7 +16,7 @@ import com.orm.pure.jpa.ex06.domain.twoway.Team_6_2;
  * Team 객체와 N:1 양방향 매핑
  * 기본 회원 엔티티 (MEMBER 테이블과 매핑)
  */
-@Entity
+//@Entity
 @Table(name = "MEMBER_6_2")
 public class Member_6_2 {
 

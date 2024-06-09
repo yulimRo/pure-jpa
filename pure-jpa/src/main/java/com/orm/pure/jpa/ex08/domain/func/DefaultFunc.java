@@ -74,6 +74,7 @@ public class DefaultFunc {
             for(int i =1; i <10; i++) {
                 Product8 product8 = new Product8();
                 product8.setName("상품"+i);
+                product8.setStockAmount(i+i*13+i/2);
                 em.persist(product8);
             }
 
@@ -95,26 +96,29 @@ public class DefaultFunc {
             Product8 findProduct1 = em.find(Product8.class, 1L);
             Product8 findProduct2 = em.find(Product8.class, 2L);
             Product8 findProduct3 = em.find(Product8.class, 3L);
-            Product8 findProduct4 = em.find(Product8.class, 4L);
 
             Order8 order = new Order8();
             order.setMember(findMem1);
             order.setProduct(findProduct1);
+            order.setOrderAmount(43);
             //findMem1.getOrders().add(order);
 
 
             Order8 order2 = new Order8();
             order2.setMember(findMem2);
             order2.setProduct(findProduct2);
+            order2.setOrderAmount(13);
 
 
             Order8 order3 = new Order8();
             order3.setMember(findMem2);
             order3.setProduct(findProduct3);
+            order3.setOrderAmount(25);
 
             Order8 order4 = new Order8();
-            order3.setMember(findMem2);
-            order3.setProduct(findProduct4);
+            order4.setMember(findMem2);
+            order4.setProduct(findProduct2);
+            order4.setOrderAmount(5);
 
 
             em.persist(order);

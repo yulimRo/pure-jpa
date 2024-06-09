@@ -25,10 +25,10 @@ public class QueryDSLFunc {
             QMember8 member8 = new QMember8("m"); //직접 지정
             QMember8 member8_2 = QMember8.member8; //기본 인스턴스 사용
 
-
+            //기본조회
             List<Member8> members = query.from(member8)
-                    .where(member8.name.eq("홍길동1").and(member8.age.gt(5)))
-                    .orderBy(member8.name.desc())
+                    .where(member8.name.eq("홍길동1").and(member8.age.gt(5))) //조건
+                    .orderBy(member8.name.desc()) //정렬
                     .list(member8);
 
             members.stream().forEach(x -> logger.debug("== QueryDSL 예제 1=" + x.getName()));

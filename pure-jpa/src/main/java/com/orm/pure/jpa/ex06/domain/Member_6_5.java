@@ -19,7 +19,7 @@ import com.orm.pure.jpa.ex06.domain.oneway.Product6_2;
 /**
  * Prodcut6_2 와 N:N 양방향
  */
-@Entity
+//@Entity
 @Table(name = "MEMBER_6_5")
 public class Member_6_5 {
 

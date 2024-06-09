@@ -15,10 +15,12 @@ public class Product8 {
 
 	@Id
 	//@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PRD_SEQ_GE")
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "product_id")
 	private Long id;
 	private String name;
+
+	private int stockAmount;
 
 	public Long getId() {
 		return id;
@@ -36,4 +38,11 @@ public class Product8 {
 		this.name = name;
 	}
 
+	public int getStockAmount() {
+		return stockAmount;
+	}
+
+	public void setStockAmount(int stockAmount) {
+		this.stockAmount = stockAmount;
+	}
 }

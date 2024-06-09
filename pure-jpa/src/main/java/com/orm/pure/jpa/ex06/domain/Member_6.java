@@ -16,7 +16,7 @@ import com.orm.pure.jpa.ex06.domain.oneway.Team_6;
  * Team 객체와 N:1 매핑
  * 기본 회원 엔티티 (MEMBER 테이블과 매핑)
  */
-@Entity
+//@Entity
 @Table(name = "MEMBER_6")
 public class Member_6 {
 
